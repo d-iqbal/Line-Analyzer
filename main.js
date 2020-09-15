@@ -20,17 +20,15 @@ function analyzeLine() {
     // document.getElementById('equation').innerHTML = getEquation(pt1x, pt1y, pt2x, pt2y);
 }
 
-// Line Analyzer Functions (Write your solutions here... getLength is done for you)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Line Analyzer Functions (Write your solutions here... getLength is done for you)
 function getLength(x1, y1, x2, y2) {
     // Use pythagorean theorem to determine length from (x1, y1) to (x2, y2)
     let rise = y2 - y1;
     let run = x2 - x1;
     return (rise ** 2 + run ** 2) ** 0.5
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 function getSlope(x1, y1, x2, y2) {
     let rise = y2 - y1;
@@ -43,7 +41,27 @@ function getDescription(x1, y1, x2, y2) {
 }
 
 function getPointLocation(x, y) {
+    if (x == 0 && y == 0) {
+        return "orign";
 
+    } else if (x > 0 && y > 0) {
+        return "Quadrant 1";
+
+    } else if (x < 0 && y > 0) {
+        return "Quadrant 2";
+
+    } else if (x < 0 && y < 0) {
+        return "Quadrant 3";
+
+    } else if (x > 0 && y < 0) {
+        return "Quadrant 4";
+
+    } else if (x > 0 && y == 0) {
+        return "x-axis";
+
+    } else {
+        return "y-axis";
+    } 
 }
 
 
